@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Background Image -->
+    <ImageView
+        android:id="@+id/imgBackground"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/children_background"
+        android:contentDescription="@null" />
+
+    <!-- Foreground UI -->
+    <LinearLayout
+        android:id="@+id/rootLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <!-- Selected Colors Display -->
+        <TextView
+            android:id="@+id/tvSelectedColors"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:text="Pick your colors!"
+            android:textAlignment="center"
+            android:textColor="#3E2723"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:fontFamily="@font/comicsansfree"/>
+
+        <!-- Color Output Box -->
+        <View
+            android:id="@+id/viewColorOutput"
+            android:layout_width="220dp"
+            android:layout_height="220dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="32dp"
+            android:background="#FFFFFF"
+            android:elevation="4dp"
+            android:outlineProvider="background" />
+
+        <!-- Color Name Display -->
+        <TextView
+            android:id="@+id/tvColorName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text=""
+            android:textAlignment="center"
+            android:textColor="#BF360C"
+            android:textSize="36sp"
+            android:textStyle="bold"
+            android:fontFamily="@font/comicsansfree"
+            />
+
+        <!-- Buttons Row -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="8dp"
+            android:weightSum="3">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnRed"
+                android:layout_width="0dp"
+                android:layout_height="64dp"
+                android:layout_margin="8dp"
+                android:layout_weight="1"
+                android:maxWidth="320dp"
+                android:text="Red"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:backgroundTint="#E53935"
+                app:cornerRadius="16dp"
+                android:fontFamily="@font/comicsansfree"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnBlue"
+                android:layout_width="0dp"
+                android:layout_height="64dp"
+                android:layout_margin="8dp"
+                android:layout_weight="1"
+                android:maxWidth="320dp"
+                android:text="Blue"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:backgroundTint="#1E88E5"
+                app:cornerRadius="16dp"
+                android:fontFamily="@font/comicsansfree"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnGreen"
+                android:layout_width="0dp"
+                android:layout_height="64dp"
+                android:layout_margin="8dp"
+                android:layout_weight="1"
+                android:maxWidth="320dp"
+                android:text="Green"
+                android:textColor="#FAF2F2"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:backgroundTint="#4CAF50"
+                app:cornerRadius="16dp"
+                android:fontFamily="@font/comicsansfree"/>
+        </LinearLayout>
+
+        <!-- Equals and Clear Buttons -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="8dp"
+            android:weightSum="2">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnEquals"
+                android:layout_width="0dp"
+                android:layout_height="64dp"
+                android:layout_margin="8dp"
+                android:layout_weight="1"
+                android:maxWidth="320dp"
+                android:text="Mix!"
+                android:textColor="#FFFFFF"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:background="@drawable/mix_button_background"
+                app:cornerRadius="16dp"
+                android:fontFamily="@font/comicsansfree"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnClear"
+                android:layout_width="0dp"
+                android:layout_height="64dp"
+                android:layout_margin="8dp"
+                android:layout_weight="1"
+                android:maxWidth="320dp"
+                android:text="Clear"
+                android:textColor="#FFFFFF"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                app:backgroundTint="#757575"
+                app:cornerRadius="16dp"
+                android:fontFamily="@font/comicsansfree"/>
+        </LinearLayout>
+    </LinearLayout>
+
+</FrameLayout>
