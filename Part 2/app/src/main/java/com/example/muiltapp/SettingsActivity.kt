@@ -2,9 +2,7 @@ package com.example.muiltapp
 
 import android.content.SharedPreferences
 import android.os.Bundle
-import android.widget.RadioButton
 import android.widget.RadioGroup
-import android.widget.Switch
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
@@ -18,24 +16,16 @@ class SettingsActivity : AppCompatActivity() {
 
         preferences = getSharedPreferences("MindHuePrefs", MODE_PRIVATE)
 
-        val themeSwitch = findViewById<Switch>(R.id.switchTheme)
         val fontSizeGroup = findViewById<RadioGroup>(R.id.fontSizeGroup)
 
-        // Load saved preferences
-        themeSwitch.isChecked = preferences.getBoolean("darkMode", false)
-        val savedFontSize = preferences.getString("fontSize", "medium")
-        when (savedFontSize) {
+        // Load saved font size
+        when (preferences.getString("fontSize", "medium")) {
             "small" -> fontSizeGroup.check(R.id.fontSmall)
             "medium" -> fontSizeGroup.check(R.id.fontMedium)
             "large" -> fontSizeGroup.check(R.id.fontLarge)
         }
 
-        // Save on toggle
-        themeSwitch.setOnCheckedChangeListener { _, isChecked ->
-            preferences.edit().putBoolean("darkMode", isChecked).apply()
-            Toast.makeText(this, "Theme saved", Toast.LENGTH_SHORT).show()
-        }
-
+        // Save font size on selection
         fontSizeGroup.setOnCheckedChangeListener { _, checkedId ->
             val size = when (checkedId) {
                 R.id.fontSmall -> "small"

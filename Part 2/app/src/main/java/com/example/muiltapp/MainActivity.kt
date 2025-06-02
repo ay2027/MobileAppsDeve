@@ -64,37 +64,22 @@ class MainActivity : AppCompatActivity() {
     private fun playSound(player: MediaPlayer?, type: String) {
         if (player == null) return
 
-        // If another sound is playing and not paused, show warning
         if (currentlyPlaying != null && currentlyPlaying != type) {
             showConflictWarning()
             return
         }
 
-        // If same sound is paused, resume it
         if (currentlyPlaying == type) {
             player.start()
             return
         }
 
-        // Stop others except this one
         stopAllExcept(type)
 
         player.isLooping = true
         player.seekTo(0)
         player.start()
         currentlyPlaying = type
-    }
-
-    private fun pauseCurrentSound() {
-        val currentPlayer = when (currentlyPlaying) {
-            "rain" -> rainSound
-            "ocean" -> oceanSound
-            "forest" -> forestSound
-            "cafe" -> cafeSound
-            else -> null
-        }
-
-        currentPlayer?.pause()
     }
 
     private fun stopAllSounds() {
@@ -104,7 +89,6 @@ class MainActivity : AppCompatActivity() {
         }
 
         currentlyPlaying = null
-
         initializeMediaPlayers()
     }
 
