@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Main background color -->
+    <color name="backgroundColor">#E6F7F9</color>
+
+    <!-- Primary text and icon color -->
+    <color name="primaryTextColor">#2D3E50</color>
+
+    <!-- Accent color for buttons -->
+    <color name="accentColor">#4BB5C1</color>
+
+    <!-- Button text color -->
+    <color name="buttonTextColor">#FFFFFF</color>
+
+    <!-- Button pressed state -->
+    <color name="buttonPressedColor">#399DA7</color>
+
+    <!-- Divider or subtle borders -->
+    <color name="lightBorderColor">#CDEDEF</color>
+
+    <!-- Disabled button or muted text -->
+    <color name="mutedGray">#A0B3B8</color>
+</resources>

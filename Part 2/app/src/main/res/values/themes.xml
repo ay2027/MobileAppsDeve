@@ -1,0 +1,12 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.MuiltApp" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Set window background to your custom color -->
+        <item name="android:windowBackground">@color/backgroundColor</item>
+
+        <!-- Optional: Ensure text appears properly on light background -->
+        <item name="android:textColor">@color/primaryTextColor</item>
+    </style>
+
+    <style name="Theme.MuiltApp" parent="Base.Theme.MuiltApp" />
+</resources>
